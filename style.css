@@ -411,158 +411,14 @@ body::after {
         6px 6px 0px #000;
     transform: rotate(-3.5deg);
     display: block; /* Para justificar y centrar */
-    margin: -3rem auto -0.6rem auto; /* Centrado horizontal y márgenes verticales ajustados */
+    margin: calc(-3rem - 5px) auto -0.6rem auto; /* Centrado horizontal y desplazado 5px hacia arriba */
     width: fit-content;
     text-align: center;
     position: relative;
     z-index: 5;
 }
 
-/* Responsividad para cabecera en móviles */
-@media (max-width: 480px) {
-    .main-container {
-        left: -6px; /* Desplaza el container a la izquierda para simetrizar por la sombra de 12px */
-    }
-    .profile-name {
-        margin-top: -2.5rem; /* Reajustado por reducción del 20% */
-        margin-bottom: -0.5rem;
-    }
-    .profile-photo-container {
-        width: 230px; /* Escalado proporcional */
-        height: 230px;
-        margin-bottom: 1.4rem;
-    }
-    .decor-oil {
-        width: 130px;
-        top: -10px;
-        left: -10px;
-    }
-    .decor-scratches {
-        width: 140px;
-        bottom: -15px;
-        right: -10px;
-    }
-    .decor-label-danger {
-        right: -10px;
-        top: 15px;
-        font-size: 0.7rem;
-        padding: 0.15rem 0.45rem;
-    }
-    .c-screw {
-        width: 22px;
-        height: 22px;
-    }
-    .c-screw-tl { top: 10px; left: 10px; }
-    .c-screw-tr { top: 10px; right: 10px; }
-    .c-screw-bl { bottom: 10px; left: 10px; }
-    .c-screw-br { bottom: 10px; right: 10px; }
-    .c-screw-r1 { right: 10px; }
-    .c-screw-l2 { left: 10px; }
-    .c-screw-r2 { right: 10px; }
-    .c-screw-l3 { left: 10px; }
-    .c-screw-r3 { right: 10px; }
-    
-    .c-screw-l1 {
-        left: -10px !important; /* Colocado sobre el trapezoide de Presentación en móvil */
-        top: -6px !important;
-        width: 22px;
-        height: 22px;
-    }
 
-    .decor-graffiti {
-        width: 160vw;
-        top: 157px; /* Desplazado exactamente un 11% de la altura de la cabecera en móviles hacia abajo */
-        transform: translate(-50%, -50%) rotate(-3deg);
-    }
-    .profile-subtitle {
-        top: -11px; /* Desplazamiento del 3% en móviles hacia arriba */
-    }
-
-    /* Ajustes para evitar desbordamiento horizontal de títulos trapezoides en móviles */
-    .info-section:nth-of-type(odd) h2 {
-        margin-left: -0.8rem;
-        font-size: 1.15rem;
-        padding: calc(0.3rem - 3px) 1.2rem calc(0.3rem + 3px) 1.5rem;
-    }
-    .info-section:nth-of-type(even) h2 {
-        margin-right: -0.8rem;
-        font-size: 1.15rem;
-        padding: calc(0.3rem - 3px) 1.5rem calc(0.3rem + 3px) 1.2rem;
-    }
-    .stats-panel {
-        overflow: visible; /* Permite que el trapezoide rotado sea completamente visible */
-    }
-    .stats-panel h3 {
-        font-size: 0.95rem;
-        padding: 0.2rem 1rem;
-        letter-spacing: 0.5px;
-        transform: skewX(-8deg) rotate(-1.5deg);
-    }
-}
-
-/* Responsividad extrema para móviles de 320px-360px */
-@media (max-width: 360px) {
-    body {
-        padding: 0.5rem;
-    }
-    .main-container {
-        padding: 1.5rem 0.8rem;
-        left: -6px;
-    }
-    .profile-photo-container {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 1.2rem;
-    }
-    .profile-name {
-        margin-top: -2.1rem;
-        margin-bottom: -0.4rem;
-    }
-    .profile-subtitle {
-        font-size: 1.15rem;
-        top: -8px;
-    }
-    .badge {
-        font-size: 0.72rem;
-        padding: 0.25rem 0.6rem;
-    }
-    .decor-oil {
-        width: 100px;
-    }
-    .decor-scratches {
-        width: 110px;
-    }
-    .decor-label-danger {
-        right: -5px;
-        top: 10px;
-    }
-
-    .info-section:nth-of-type(odd) h2 {
-        margin-left: -0.5rem;
-        font-size: 1rem;
-        padding: calc(0.2rem - 3px) 0.8rem calc(0.2rem + 3px) 1.2rem;
-    }
-    .info-section:nth-of-type(even) h2 {
-        margin-right: -0.5rem;
-        font-size: 1rem;
-        padding: calc(0.2rem - 3px) 1.2rem calc(0.2rem + 3px) 0.8rem;
-    }
-    .stats-panel {
-        overflow: visible;
-    }
-    .stats-panel h3 {
-        font-size: 0.85rem;
-        padding: 0.15rem 0.8rem;
-        letter-spacing: 0.2px;
-        transform: skewX(-6deg) rotate(-1.5deg);
-    }
-    .c-screw-l1 {
-        left: -5px !important;
-        top: -6px !important;
-        width: 18px;
-        height: 18px;
-    }
-}
 
 .profile-subtitle {
     font-family: var(--font-section);
@@ -576,7 +432,7 @@ body::after {
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 0px #000;
     position: relative;
-    top: -15px; /* Desplazado 3% de la altura del cabezote hacia arriba */
+    top: -11px; /* Bajado 4px (desplazado vertical relativo) */
     z-index: 3; /* Por encima del graffiti de fondo */
 }
 
@@ -1755,6 +1611,156 @@ body::after {
 .tooltip-close-btn:focus-visible {
     outline: 3px solid var(--neon-green);
     outline-offset: 2px;
+}
+
+/* ==========================================================================
+   SECCIÓN DE RESPONSIVIDAD MÓVIL (DECLARED AT BOTTOM TO OVERRIDE BASE STYLES)
+   ========================================================================== */
+
+/* Responsividad para cabecera en móviles */
+@media (max-width: 480px) {
+    .main-container {
+        left: -6px; /* Desplaza el container a la izquierda para simetrizar por la sombra de 12px */
+    }
+    .profile-name {
+        margin-top: calc(-2.5rem - 5px); /* Desplazado 5px hacia arriba */
+        margin-bottom: -0.5rem;
+    }
+    .profile-photo-container {
+        width: 230px; /* Escalado proporcional */
+        height: 230px;
+        margin-bottom: 1.4rem;
+    }
+    .decor-oil {
+        width: 130px;
+        top: -10px;
+        left: -10px;
+    }
+    .decor-scratches {
+        width: 140px;
+        bottom: -15px;
+        right: -10px;
+    }
+    .decor-label-danger {
+        right: -10px;
+        top: 15px;
+        font-size: 0.7rem;
+        padding: 0.15rem 0.45rem;
+    }
+    .c-screw {
+        width: 22px;
+        height: 22px;
+    }
+    .c-screw-tl { top: 10px; left: 10px; }
+    .c-screw-tr { top: 10px; right: 10px; }
+    .c-screw-bl { bottom: 10px; left: 10px; }
+    .c-screw-br { bottom: 10px; right: 10px; }
+    .c-screw-r1 { right: 10px; }
+    .c-screw-l2 { left: 10px; }
+    .c-screw-r2 { right: 10px; }
+    .c-screw-l3 { left: 10px; }
+    .c-screw-r3 { right: 10px; }
+    
+    .c-screw-l1 {
+        left: -10px !important; /* Colocado sobre el trapezoide de Presentación en móvil */
+        top: -6px !important;
+        width: 22px;
+        height: 22px;
+    }
+
+    .decor-graffiti {
+        width: 160vw;
+        top: 157px; /* Desplazado exactamente un 11% de la altura de la cabecera en móviles hacia abajo */
+        transform: translate(-50%, -50%) rotate(-3deg);
+    }
+    .profile-subtitle {
+        top: -7px; /* Bajado 4px (de -11px a -7px) */
+    }
+
+    /* Ajustes para evitar desbordamiento horizontal de títulos trapezoides en móviles */
+    .info-section:nth-of-type(odd) h2 {
+        margin-left: -0.8rem;
+        font-size: 1.15rem;
+        padding: calc(0.3rem - 3px) 1.2rem calc(0.3rem + 3px) 1.5rem;
+    }
+    .info-section:nth-of-type(even) h2 {
+        margin-right: -0.8rem;
+        font-size: 1.15rem;
+        padding: calc(0.3rem - 3px) 1.5rem calc(0.3rem + 3px) 1.2rem;
+    }
+    .stats-panel {
+        overflow: visible; /* Permite que el trapezoide rotado sea completamente visible */
+    }
+    .stats-panel h3 {
+        font-size: 0.9rem; /* Reducido tamaño de letra para asegurar legibilidad */
+        padding: 0.2rem 0.8rem; /* Reducido el largo del trapezoide (padding horizontal) */
+        letter-spacing: 0.5px;
+        transform: skewX(-8deg) rotate(-1.5deg);
+    }
+}
+
+/* Responsividad extrema para móviles de 320px-360px */
+@media (max-width: 360px) {
+    body {
+        padding: 0.5rem;
+    }
+    .main-container {
+        padding: 1.5rem 0.8rem;
+        left: -6px;
+    }
+    .profile-photo-container {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 1.2rem;
+    }
+    .profile-name {
+        margin-top: calc(-2.1rem - 5px); /* Desplazado 5px hacia arriba */
+        margin-bottom: -0.4rem;
+    }
+    .profile-subtitle {
+        font-size: 1.15rem;
+        top: -4px; /* Bajado 4px (de -8px a -4px) */
+    }
+    .badge {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.6rem;
+    }
+    .decor-oil {
+        width: 100px;
+    }
+    .decor-scratches {
+        width: 110px;
+    }
+    .decor-label-danger {
+        right: -5px;
+        top: 10px;
+    }
+
+    .info-section:nth-of-type(odd) h2 {
+        margin-left: -0.5rem;
+        font-size: 1rem;
+        padding: calc(0.2rem - 3px) 0.8rem calc(0.2rem + 3px) 1.2rem;
+    }
+    .info-section:nth-of-type(even) h2 {
+        margin-right: -0.5rem;
+        font-size: 1rem;
+        padding: calc(0.2rem - 3px) 1.2rem calc(0.2rem + 3px) 0.8rem;
+    }
+    .stats-panel {
+        overflow: visible;
+    }
+    .stats-panel h3 {
+        font-size: 0.8rem; /* Aún más pequeño para móviles muy angostos */
+        padding: 0.15rem 0.6rem; /* Largo del trapezoide al mínimo */
+        letter-spacing: 0.2px;
+        transform: skewX(-6deg) rotate(-1.5deg);
+    }
+    .c-screw-l1 {
+        left: -5px !important;
+        top: -6px !important;
+        width: 18px;
+        height: 18px;
+    }
 }
 
 
