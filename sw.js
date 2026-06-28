@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bruto-card-v11';
+const CACHE_NAME = 'bruto-card-v12';
 const ASSETS = [
     './',
     './index.html',

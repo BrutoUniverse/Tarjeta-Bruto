@@ -411,7 +411,7 @@ body::after {
         6px 6px 0px #000;
     transform: rotate(-3.5deg);
     display: block; /* Para justificar y centrar */
-    margin: calc(-3rem - 5px) auto -0.6rem auto; /* Centrado horizontal y desplazado 5px hacia arriba */
+    margin: calc(-3rem - 5px) auto 0.8rem auto; /* Centrado horizontal, desplazado 5px hacia arriba y 0.8rem hacia abajo */
     width: fit-content;
     text-align: center;
     position: relative;
@@ -432,7 +432,7 @@ body::after {
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 0px #000;
     position: relative;
-    top: -11px; /* Bajado 4px (desplazado vertical relativo) */
+    top: 4px; /* Desplazado verticalmente hacia abajo para evitar superposición */
     z-index: 3; /* Por encima del graffiti de fondo */
 }
 
@@ -1624,7 +1624,7 @@ body::after {
     }
     .profile-name {
         margin-top: calc(-2.5rem - 5px); /* Desplazado 5px hacia arriba */
-        margin-bottom: -0.5rem;
+        margin-bottom: 0.6rem; /* Margen inferior positivo */
     }
     .profile-photo-container {
         width: 230px; /* Escalado proporcional */
@@ -1674,7 +1674,7 @@ body::after {
         transform: translate(-50%, -50%) rotate(-3deg);
     }
     .profile-subtitle {
-        top: -7px; /* Bajado 4px (de -11px a -7px) */
+        top: 2px; /* Desplazado verticalmente hacia abajo en móviles */
     }
 
     /* Ajustes para evitar desbordamiento horizontal de títulos trapezoides en móviles */
@@ -1692,10 +1692,10 @@ body::after {
         overflow: visible; /* Permite que el trapezoide rotado sea completamente visible */
     }
     .stats-panel h3 {
-        font-size: 0.9rem; /* Reducido tamaño de letra para asegurar legibilidad */
-        padding: 0.2rem 0.8rem; /* Reducido el largo del trapezoide (padding horizontal) */
-        letter-spacing: 0.5px;
-        transform: skewX(-8deg) rotate(-1.5deg);
+        font-size: 0.85rem;
+        padding: 0.2rem 0.6rem;
+        letter-spacing: 0px;
+        transform: skewX(-6deg) rotate(-1deg);
     }
 }
 
@@ -1715,11 +1715,11 @@ body::after {
     }
     .profile-name {
         margin-top: calc(-2.1rem - 5px); /* Desplazado 5px hacia arriba */
-        margin-bottom: -0.4rem;
+        margin-bottom: 0.4rem; /* Margen inferior positivo */
     }
     .profile-subtitle {
         font-size: 1.15rem;
-        top: -4px; /* Bajado 4px (de -8px a -4px) */
+        top: 1px; /* Desplazado verticalmente hacia abajo en móviles extremos */
     }
     .badge {
         font-size: 0.72rem;
@@ -1750,10 +1750,10 @@ body::after {
         overflow: visible;
     }
     .stats-panel h3 {
-        font-size: 0.8rem; /* Aún más pequeño para móviles muy angostos */
-        padding: 0.15rem 0.6rem; /* Largo del trapezoide al mínimo */
-        letter-spacing: 0.2px;
-        transform: skewX(-6deg) rotate(-1.5deg);
+        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
+        letter-spacing: 0px;
+        transform: skewX(-4deg) rotate(-1deg);
     }
     .c-screw-l1 {
         left: -5px !important;
