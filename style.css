@@ -61,6 +61,13 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    touch-action: pan-y;
+}
+
 body {
     background-color: var(--bg-color);
     background-image: url('textura_chapa.png');
@@ -72,8 +79,6 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     padding: 1.5rem;
-    position: relative;
-    overflow-x: hidden;
 }
 
 /* Capa de manchas de grasa, aceite y óxido superpuesta */
@@ -448,6 +453,23 @@ body::after {
     .profile-subtitle {
         top: -11px; /* Desplazamiento del 3% en móviles hacia arriba */
     }
+
+    /* Ajustes para evitar desbordamiento horizontal de títulos trapezoides en móviles */
+    .info-section:nth-of-type(odd) h2 {
+        margin-left: -0.8rem;
+        font-size: 1.15rem;
+        padding: calc(0.3rem - 3px) 1.2rem calc(0.3rem + 3px) 1.5rem;
+    }
+    .info-section:nth-of-type(even) h2 {
+        margin-right: -0.8rem;
+        font-size: 1.15rem;
+        padding: calc(0.3rem - 3px) 1.5rem calc(0.3rem + 3px) 1.2rem;
+    }
+    .stats-panel h3 {
+        font-size: 1.15rem;
+        padding: 0.25rem 1.2rem;
+        letter-spacing: 1px;
+    }
 }
 
 /* Responsividad extrema para móviles de 320px-360px */
@@ -483,6 +505,23 @@ body::after {
     .decor-label-danger {
         right: -5px;
         top: 10px;
+    }
+
+    .info-section:nth-of-type(odd) h2 {
+        margin-left: -0.5rem;
+        font-size: 1rem;
+        padding: calc(0.2rem - 3px) 0.8rem calc(0.2rem + 3px) 1.2rem;
+    }
+    .info-section:nth-of-type(even) h2 {
+        margin-right: -0.5rem;
+        font-size: 1rem;
+        padding: calc(0.2rem - 3px) 1.2rem calc(0.2rem + 3px) 0.8rem;
+    }
+    .stats-panel h3 {
+        font-size: 0.95rem;
+        padding: 0.2rem 0.8rem;
+        letter-spacing: 0.5px;
+        transform: skewX(-8deg) rotate(-1.5deg);
     }
 }
 
@@ -554,32 +593,64 @@ body::after {
     cursor: default;
 }
 
-.badge:nth-child(even) {
-    --rotate-val: -1.5deg;
-}
-
-.badge:nth-child(3n) {
-    --rotate-val: 1.2deg;
-    background: var(--neon-green);
-    color: #000;
-}
-
-.badge:nth-child(3n+1) {
+.badge:nth-child(1) {
     --rotate-val: 2.2deg;
     background: var(--neon-pink);
     color: #fff;
 }
 
-.badge:nth-child(4n) {
+.badge:nth-child(2) {
+    --rotate-val: -1.5deg;
+    background: var(--neon-yellow);
+    color: #000;
+}
+
+.badge:nth-child(3) {
+    --rotate-val: 1.2deg;
+    background: var(--neon-green);
+    color: #000;
+}
+
+.badge:nth-child(4) {
     --rotate-val: -2.5deg;
     background: var(--neon-blue);
     color: #fff;
 }
 
-.badge:nth-child(5n) {
+.badge:nth-child(5) {
     --rotate-val: -1deg;
+    background: var(--neon-orange);
+    color: #000;
+}
+
+.badge:nth-child(6) {
+    --rotate-val: 1.5deg;
     background: var(--neon-purple);
     color: #fff;
+}
+
+.badge:nth-child(7) {
+    --rotate-val: 2deg;
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.badge:nth-child(8) {
+    --rotate-val: -2deg;
+    background: var(--neon-pink);
+    color: #fff;
+}
+
+.badge:nth-child(9) {
+    --rotate-val: 1.2deg;
+    background: var(--neon-green);
+    color: #000;
+}
+
+.badge:nth-child(10) {
+    --rotate-val: -1.5deg;
+    background: var(--neon-yellow);
+    color: #000;
 }
 
 /* Secciones generales */
