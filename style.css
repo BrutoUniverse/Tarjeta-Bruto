@@ -385,7 +385,7 @@ body::after {
 /* Título BRUTO - Espacio Negativo Grunge Punk (Negro dominante con aerosol neón de fondo) */
 .profile-name {
     font-family: var(--font-title);
-    font-size: clamp(4.2rem, 25vw, 9.45rem); /* Escalado un 40% más grande */
+    font-size: clamp(3.36rem, 20vw, 7.56rem); /* Reducido un 20% para un balance más refinado */
     font-weight: 400;
     line-height: 0.8; /* Mantiene la huella vertical compacta al escalar */
     letter-spacing: 2px;
@@ -410,11 +410,12 @@ body::after {
         /* Sombra dura de relieve */
         6px 6px 0px #000;
     transform: rotate(-3.5deg);
-    margin-top: -4rem; /* Desplazado hacia arriba para compensar el tamaño */
-    margin-bottom: -1rem; /* Margen negativo inferior para evitar empujar otros elementos */
+    display: block; /* Para justificar y centrar */
+    margin: -3rem auto -0.6rem auto; /* Centrado horizontal y márgenes verticales ajustados */
+    width: fit-content;
+    text-align: center;
     position: relative;
     z-index: 5;
-    display: inline-block;
 }
 
 /* Responsividad para cabecera en móviles */
@@ -423,8 +424,8 @@ body::after {
         left: -6px; /* Desplaza el container a la izquierda para simetrizar por la sombra de 12px */
     }
     .profile-name {
-        margin-top: -3.5rem; /* Reajustado por el tamaño 40% más grande */
-        margin-bottom: -0.8rem;
+        margin-top: -2.5rem; /* Reajustado por reducción del 20% */
+        margin-bottom: -0.5rem;
     }
     .profile-photo-container {
         width: 230px; /* Escalado proporcional */
@@ -514,8 +515,8 @@ body::after {
         margin-bottom: 1.2rem;
     }
     .profile-name {
-        margin-top: -3rem;
-        margin-bottom: -0.6rem;
+        margin-top: -2.1rem;
+        margin-bottom: -0.4rem;
     }
     .profile-subtitle {
         font-size: 1.15rem;
@@ -567,6 +568,7 @@ body::after {
     font-family: var(--font-section);
     font-size: 1.44rem; /* Incrementado 3px (de 1.25rem/20px a 1.44rem/23px) */
     color: var(--neon-yellow); /* Amarillo radioactivo */
+    line-height: 1.15; /* Espacio de líneas reducido para texto en múltiples renglones */
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
