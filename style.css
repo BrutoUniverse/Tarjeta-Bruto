@@ -254,8 +254,8 @@ body::after {
 
 /* Tornillos laterales distribuidos a lo largo del scroll */
 .c-screw-l1 {
-    top: 20%;
-    left: 15px;
+    top: -3px;
+    left: -20px;
     transform: rotate(45deg);
 }
 
@@ -385,30 +385,46 @@ body::after {
 /* Título BRUTO - Espacio Negativo Grunge Punk (Negro dominante con aerosol neón de fondo) */
 .profile-name {
     font-family: var(--font-title);
-    font-size: clamp(3rem, 18vw, 6.75rem); /* Escalado dinámico responsivo sin desbordamientos */
+    font-size: clamp(4.2rem, 25vw, 9.45rem); /* Escalado un 40% más grande */
     font-weight: 400;
+    line-height: 0.8; /* Mantiene la huella vertical compacta al escalar */
     letter-spacing: 2px;
     color: #070a0f; /* Negro asfalto profundo de Bruto */
-    -webkit-text-stroke: 1.5px var(--neon-green-dark); /* Borde verde oscuro */
+    -webkit-text-stroke: 1.5px var(--neon-green); /* Borde interno verde claro de 1.5px */
     text-shadow:
-        0 0 5px var(--neon-green-dark),
-        0 0 15px var(--neon-green-dark),
-        0 0 30px var(--neon-green-dark-glow),
-        -2px 2px 4px var(--neon-blue),
-        2px -2px 4px var(--neon-blue),
-        4px 4px 0px #000; /* Sombra dura de relieve */
+        /* Borde externo de verde oscuro de 2px (Total 3.5px) */
+        -3.5px -3.5px 0 var(--neon-green-dark),
+         3.5px -3.5px 0 var(--neon-green-dark),
+        -3.5px  3.5px 0 var(--neon-green-dark),
+         3.5px  3.5px 0 var(--neon-green-dark),
+        -3.5px  0px   0 var(--neon-green-dark),
+         3.5px  0px   0 var(--neon-green-dark),
+         0px   -3.5px 0 var(--neon-green-dark),
+         0px    3.5px 0 var(--neon-green-dark),
+        /* Resplandores neón de fondo */
+        0 0 8px var(--neon-green-dark),
+        0 0 20px var(--neon-green-dark-glow),
+        /* Bordes azules de acento */
+        -5px 5px 6px var(--neon-blue),
+        5px -5px 6px var(--neon-blue),
+        /* Sombra dura de relieve */
+        6px 6px 0px #000;
     transform: rotate(-3.5deg);
-    margin-top: -2.5rem;
+    margin-top: -4rem; /* Desplazado hacia arriba para compensar el tamaño */
+    margin-bottom: -1rem; /* Margen negativo inferior para evitar empujar otros elementos */
     position: relative;
     z-index: 5;
     display: inline-block;
-    margin-bottom: 0.2rem;
 }
 
 /* Responsividad para cabecera en móviles */
 @media (max-width: 480px) {
+    .main-container {
+        left: -6px; /* Desplaza el container a la izquierda para simetrizar por la sombra de 12px */
+    }
     .profile-name {
-        margin-top: -2rem;
+        margin-top: -3.5rem; /* Reajustado por el tamaño 40% más grande */
+        margin-bottom: -0.8rem;
     }
     .profile-photo-container {
         width: 230px; /* Escalado proporcional */
@@ -439,12 +455,19 @@ body::after {
     .c-screw-tr { top: 10px; right: 10px; }
     .c-screw-bl { bottom: 10px; left: 10px; }
     .c-screw-br { bottom: 10px; right: 10px; }
-    .c-screw-l1 { left: 10px; }
     .c-screw-r1 { right: 10px; }
     .c-screw-l2 { left: 10px; }
     .c-screw-r2 { right: 10px; }
     .c-screw-l3 { left: 10px; }
     .c-screw-r3 { right: 10px; }
+    
+    .c-screw-l1 {
+        left: -10px !important; /* Colocado sobre el trapezoide de Presentación en móvil */
+        top: -6px !important;
+        width: 22px;
+        height: 22px;
+    }
+
     .decor-graffiti {
         width: 160vw;
         top: 157px; /* Desplazado exactamente un 11% de la altura de la cabecera en móviles hacia abajo */
@@ -465,10 +488,14 @@ body::after {
         font-size: 1.15rem;
         padding: calc(0.3rem - 3px) 1.5rem calc(0.3rem + 3px) 1.2rem;
     }
+    .stats-panel {
+        overflow: visible; /* Permite que el trapezoide rotado sea completamente visible */
+    }
     .stats-panel h3 {
-        font-size: 1.15rem;
-        padding: 0.25rem 1.2rem;
-        letter-spacing: 1px;
+        font-size: 0.95rem;
+        padding: 0.2rem 1rem;
+        letter-spacing: 0.5px;
+        transform: skewX(-8deg) rotate(-1.5deg);
     }
 }
 
@@ -479,6 +506,7 @@ body::after {
     }
     .main-container {
         padding: 1.5rem 0.8rem;
+        left: -6px;
     }
     .profile-photo-container {
         width: 180px;
@@ -486,7 +514,8 @@ body::after {
         margin-bottom: 1.2rem;
     }
     .profile-name {
-        margin-top: -1.5rem;
+        margin-top: -3rem;
+        margin-bottom: -0.6rem;
     }
     .profile-subtitle {
         font-size: 1.15rem;
@@ -517,18 +546,27 @@ body::after {
         font-size: 1rem;
         padding: calc(0.2rem - 3px) 1.2rem calc(0.2rem + 3px) 0.8rem;
     }
+    .stats-panel {
+        overflow: visible;
+    }
     .stats-panel h3 {
-        font-size: 0.95rem;
-        padding: 0.2rem 0.8rem;
-        letter-spacing: 0.5px;
-        transform: skewX(-8deg) rotate(-1.5deg);
+        font-size: 0.85rem;
+        padding: 0.15rem 0.8rem;
+        letter-spacing: 0.2px;
+        transform: skewX(-6deg) rotate(-1.5deg);
+    }
+    .c-screw-l1 {
+        left: -5px !important;
+        top: -6px !important;
+        width: 18px;
+        height: 18px;
     }
 }
 
 .profile-subtitle {
     font-family: var(--font-section);
     font-size: 1.44rem; /* Incrementado 3px (de 1.25rem/20px a 1.44rem/23px) */
-    color: var(--neon-green-dark); /* Color verde más oscuro para contraste con el graffiti */
+    color: var(--neon-yellow); /* Amarillo radioactivo */
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 800;
@@ -658,6 +696,7 @@ body::after {
     margin-bottom: 2.8rem;
     display: flex;
     flex-direction: column;
+    position: relative; /* Para anclar tornillos y elementos decorativos relativos */
 }
 
 .info-section h2 {
@@ -974,6 +1013,8 @@ body::after {
     height: 100%;
     background: repeating-linear-gradient(-45deg, var(--neon-green), var(--neon-green) 6px, #000 6px, #000 12px);
     border-right: 2px solid #000;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     z-index: 2;
 }
 
